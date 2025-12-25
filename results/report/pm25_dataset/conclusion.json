@@ -1,0 +1,59 @@
+{
+  "best": {
+    "method": "cnn_svm",
+    "tag": "baseline",
+    "test_acc": 0.3089887640449438,
+    "macro_f1": 0.3110014516049986
+  },
+  "top3": [
+    {
+      "method": "cnn_svm",
+      "tag": "baseline",
+      "test_acc": 0.3089887640449438,
+      "macro_f1": 0.3110014516049986
+    },
+    {
+      "method": "cnn_adaboost",
+      "tag": "baseline",
+      "test_acc": 0.2303370786516854,
+      "macro_f1": 0.15317959887386587
+    },
+    {
+      "method": "cnn_pca",
+      "tag": "baseline",
+      "test_acc": 0.22752808988764045,
+      "macro_f1": 0.19022588442451374
+    }
+  ],
+  "ablation_hist_eq_affine": [
+    [
+      "cnn_svm",
+      "0.308989",
+      "0.202247",
+      "0.188202",
+      "-0.106742",
+      "-0.120787"
+    ],
+    [
+      "cnn_pca",
+      "0.227528",
+      "0.157303",
+      "0.171348",
+      "-0.070225",
+      "-0.056180"
+    ],
+    [
+      "cnn_adaboost",
+      "0.230337",
+      "0.109551",
+      "0.202247",
+      "-0.120787",
+      "-0.028090"
+    ]
+  ],
+  "notes": [
+    "Results 表請看 results_table.csv（含 test_acc 與 cv mean±std）。",
+    "Ablation 表請看 ablation_hist_eq_affine.csv（同方法 baseline vs hist_eq_affine）。",
+    "Error analysis：confusion_best.png / error_top_confusions.csv"
+  ]
+}

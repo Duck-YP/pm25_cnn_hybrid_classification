@@ -1,0 +1,4 @@
+method,test_acc_baseline,test_acc_hist_eq,test_acc_hist_eq_affine,delta_hist_eq_minus_baseline,delta_hist_eq_affine_minus_baseline
+cnn_svm,0.308989,0.202247,0.188202,-0.106742,-0.120787
+cnn_pca,0.227528,0.157303,0.171348,-0.070225,-0.056180
+cnn_adaboost,0.230337,0.109551,0.202247,-0.120787,-0.028090

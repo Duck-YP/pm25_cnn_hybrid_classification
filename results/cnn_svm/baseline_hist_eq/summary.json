@@ -1,0 +1,5 @@
+{
+  "feat_tag": "baseline_hist_eq",
+  "train_acc": 0.9972602739726028,
+  "test_acc": 0.20224719101123595
+}

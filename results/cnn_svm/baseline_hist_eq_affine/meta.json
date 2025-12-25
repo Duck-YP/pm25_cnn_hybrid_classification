@@ -1,0 +1,87 @@
+{
+  "seed": 42,
+  "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+  "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results",
+  "feat_tag": "baseline_hist_eq_affine",
+  "feat_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_feature/baseline_hist_eq_affine",
+  "features": {
+    "train_shape": [
+      365,
+      128
+    ],
+    "test_shape": [
+      356,
+      128
+    ]
+  },
+  "svm_cv": {
+    "best_params": {
+      "C": 30.0,
+      "gamma": 0.003,
+      "class_weight": "balanced"
+    },
+    "cv_mean_acc": 0.5780821917808219,
+    "cv_std_acc": 0.06390084268323616,
+    "n_splits": 5
+  },
+  "final": {
+    "train_acc": 0.7808219178082192,
+    "test_acc": 0.18820224719101122
+  },
+  "saved": {
+    "scaler": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_svm/baseline_hist_eq_affine/cnn_svm_feat_scaler.joblib",
+    "svm": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_svm/baseline_hist_eq_affine/cnn_svm_svm.joblib",
+    "summary": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_svm/baseline_hist_eq_affine/summary.json"
+  },
+  "feature_stage_meta_json": {
+    "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+    "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_feature/baseline_hist_eq_affine",
+    "tag": "baseline_hist_eq_affine",
+    "seed": 42,
+    "device": "cpu",
+    "cfg": {
+      "lr": 0.0003,
+      "weight_decay": 0.001,
+      "batch_size": 32,
+      "epochs_max": 120,
+      "patience": 25,
+      "feature_dim": 128,
+      "val_ratio": 0.2
+    },
+    "preprocess": "hist_eq",
+    "clip_p": 0.0,
+    "clip_hi": null,
+    "train_affine": true,
+    "best_epoch": 53,
+    "best_val_acc": 0.3698630136986301,
+    "feature_dim": 128,
+    "class_weight_used": false,
+    "env": {
+      "python": "3.11.9",
+      "platform": "macOS-12.1-arm64-arm-64bit",
+      "torch": "2.9.1",
+      "numpy": "2.3.5"
+    },
+    "shapes": {
+      "X_train": [
+        365,
+        157,
+        103
+      ],
+      "X_test": [
+        356,
+        157,
+        103
+      ],
+      "features_train": [
+        365,
+        128
+      ],
+      "features_test": [
+        356,
+        128
+      ]
+    }
+  },
+  "note": "SVM 超參數以 train features 的 5-fold CV 選出；test 僅最後評估一次。"
+}

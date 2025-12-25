@@ -1,0 +1,16 @@
+# 檔案格式
+
+此檔案包含下列三個 keys：
+
+X_train: N_train 個時刻的 PM2.5 預報資料 (N_train, H, W)
+y_train: 訓練資料的 PM2.5 預報的月份標籤
+X_test： N_test 個時刻的 PM2.5 預報資料 (N_test, H, W)
+y_test:  測試資料的 PM2.5 預報的月份標籤
+
+# 讀取方式
+
+data = np.load("pm25_dataset.npz")
+X_train = data["X_train"] 
+y_train = data["y_train"]
+
+

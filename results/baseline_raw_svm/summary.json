@@ -1,0 +1,5 @@
+{
+  "method": "baseline_raw_svm",
+  "train_acc": 0.9917808219178083,
+  "test_acc": 0.19662921348314608
+}

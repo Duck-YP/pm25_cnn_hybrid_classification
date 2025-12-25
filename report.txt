@@ -1,0 +1,101 @@
+PM2.5 Dataset NPZ Investigation Report (Professor-ready)
+generated_at_utc: 2025-12-23T14:23:14Z
+
+=== Executive Summary ===
+- data_path: pm25_dataset.npz
+- file_size: 44.48 MiB
+- file_sha256: b85e6476baa6e94f8cc2355c9836808064a549c51092993b24d799ea7dee0f43
+- keys: X_train, y_train, X_test, y_test
+- X_train: shape=(365, 157, 103), dtype=float32 | y_train: shape=(365,), dtype=int32
+- X_test : shape=(356, 157, 103), dtype=float32  | y_test : shape=(356,), dtype=int32
+- NaN/Inf (train): 0/0 | NaN/Inf (test): 0/0
+- Label range (train/test): 1..12 / 1..12 (unique=12/12)
+- Leakage check (exact duplicates, full SHA1): 0 matches (train_n=365, test_n=356)
+- Train vs Test distribution shift (quick view):
+  - Train mean/std: 5.635260 / 7.852575
+  - Test  mean/std: 7.771372 / 9.893350
+  - Train max: 129.530304 | Test max: 251.664505
+  - Train P90/P99: 15.222700 / 37.414002
+  - Test  P90/P99: 20.331110 / 46.110600
+
+=== Environment (for reproducibility) ===
+- python: 3.11.9
+- numpy: 2.3.5
+- platform: macOS-12.1-arm64-arm-64bit
+
+=== Dataset Schema ===
+- X_train: shape=(365, 157, 103), dtype=float32, nbytes=22.52 MiB
+- y_train: shape=(365,), dtype=int64, nbytes=2.85 KiB
+- X_test : shape=(356, 157, 103), dtype=float32, nbytes=21.96 MiB
+- y_test : shape=(356,), dtype=int64, nbytes=2.78 KiB
+
+=== X Statistics (Train) ===
+- finite_ratio: 1.000000 | NaN=0, Inf=0
+- min/max: 0.001100 / 129.530304
+- mean/std: 5.635260 / 7.852575
+- percentiles: (sampled 5000000 elements, seed=42)
+  P1=0.082500 | P10=0.333700 | P50=2.536600 | P90=15.222700 | P99=37.414002
+
+=== X Statistics (Test) ===
+- finite_ratio: 1.000000 | NaN=0, Inf=0
+- min/max: 0.006700 / 251.664505
+- mean/std: 7.771372 / 9.893350
+- percentiles: (sampled 5000000 elements, seed=42)
+  P1=0.307600 | P10=0.549400 | P50=4.004400 | P90=20.331110 | P99=46.110600
+
+=== y Statistics (Train) ===
+- label min/max: 1 / 12 | unique=12
+- note: label 看起來是 1~12（月份）。實作分類時常轉成 0~11（月份-1）。
+label | count | ratio
+----- | ----- | -----
+    1 |    31 | 0.0849
+    2 |    28 | 0.0767
+    3 |    31 | 0.0849
+    4 |    30 | 0.0822
+    5 |    31 | 0.0849
+    6 |    30 | 0.0822
+    7 |    31 | 0.0849
+    8 |    31 | 0.0849
+    9 |    30 | 0.0822
+   10 |    31 | 0.0849
+   11 |    30 | 0.0822
+   12 |    31 | 0.0849
+
+=== y Statistics (Test) ===
+- label min/max: 1 / 12 | unique=12
+- note: label 看起來是 1~12（月份）。實作分類時常轉成 0~11（月份-1）。
+label | count | ratio
+----- | ----- | -----
+    1 |    31 | 0.0871
+    2 |    28 | 0.0787
+    3 |    31 | 0.0871
+    4 |    30 | 0.0843
+    5 |    31 | 0.0871
+    6 |    30 | 0.0843
+    7 |    29 | 0.0815
+    8 |    31 | 0.0871
+    9 |    30 | 0.0843
+   10 |    31 | 0.0871
+   11 |    30 | 0.0843
+   12 |    24 | 0.0674
+
+=== Leakage Check (Train vs Test, FULL SHA1) ===
+- exact duplicate matches: 0
+OK: 未發現 train/test 完全相同樣本（以全量 SHA1 指紋比對）。
+
+=== Sample-level Diagnostics (Train) ===
+- per-sample mean range: 1.510603 .. 33.537693
+- per-sample std  range: 1.850742 .. 19.775492
+- Top-5 highest mean samples (idx, mean): [(61, 33.53769302368164), (261, 28.092927932739258), (13, 26.88515281677246), (262, 24.77305793762207), (251, 22.76346206665039)]
+- Top-5 lowest  mean samples (idx, mean): [(304, 1.5106033086776733), (350, 1.6876580715179443), (162, 1.7361862659454346), (305, 1.8383734226226807), (161, 1.9893807172775269)]
+- Top-5 highest std  samples (idx, std):  [(61, 19.77549171447754), (251, 13.894702911376953), (274, 13.846308708190918), (276, 13.241547584533691), (62, 12.815085411071777)]
+- Top-5 lowest  std  samples (idx, std):  [(245, 1.850741982460022), (246, 2.4391512870788574), (162, 2.582174062728882), (153, 2.624163866043091), (156, 2.8599913120269775)]
+
+=== Sample-level Diagnostics (Test) ===
+- per-sample mean range: 2.202938 .. 38.774258
+- per-sample std  range: 2.334765 .. 22.619263
+- Top-5 highest mean samples (idx, mean): [(90, 38.77425765991211), (165, 34.983463287353516), (307, 34.10898971557617), (289, 31.631362915039062), (13, 25.620466232299805)]
+- Top-5 lowest  mean samples (idx, mean): [(65, 2.2029380798339844), (320, 2.2334423065185547), (35, 2.4469153881073), (190, 2.452418088912964), (266, 2.5104002952575684)]
+- Top-5 highest std  samples (idx, std):  [(90, 22.6192626953125), (99, 18.388853073120117), (269, 18.328523635864258), (199, 17.945335388183594), (339, 17.711557388305664)]
+- Top-5 lowest  std  samples (idx, std):  [(157, 2.3347647190093994), (15, 2.4962313175201416), (35, 2.615570306777954), (350, 2.801424980163574), (65, 2.8224995136260986)]
+

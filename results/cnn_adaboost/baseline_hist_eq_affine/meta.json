@@ -1,0 +1,106 @@
+{
+  "seed": 42,
+  "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+  "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results",
+  "feat_tag": "baseline_hist_eq_affine",
+  "feat_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_feature/baseline_hist_eq_affine",
+  "features": {
+    "train_shape": [
+      365,
+      128
+    ],
+    "test_shape": [
+      356,
+      128
+    ]
+  },
+  "pca_adaboost_cv": {
+    "best_params": {
+      "pca_dim": 32,
+      "n_estimators": 364,
+      "learning_rate": 1.0,
+      "stump_depth": 1,
+      "min_leaf": 2,
+      "algorithm": "SAMME.R"
+    },
+    "cv_mean_acc": 0.4164383561643835,
+    "cv_std_acc": 0.041187113365405224,
+    "n_splits": 5,
+    "pca_list_effective": [
+      32,
+      64,
+      128
+    ],
+    "n_estimators_list": [
+      91,
+      182,
+      364
+    ],
+    "learning_rate_list": [
+      0.25,
+      0.5,
+      1.0
+    ]
+  },
+  "final": {
+    "train_acc": 0.5534246575342465,
+    "test_acc": 0.20224719101123595
+  },
+  "saved": {
+    "scaler": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_adaboost/baseline_hist_eq_affine/cnn_adaboost_feat_scaler.joblib",
+    "pca": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_adaboost/baseline_hist_eq_affine/cnn_adaboost_pca.joblib",
+    "adaboost": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_adaboost/baseline_hist_eq_affine/cnn_adaboost.joblib",
+    "summary": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_adaboost/baseline_hist_eq_affine/summary.json"
+  },
+  "feature_stage_meta_json": {
+    "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+    "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_feature/baseline_hist_eq_affine",
+    "tag": "baseline_hist_eq_affine",
+    "seed": 42,
+    "device": "cpu",
+    "cfg": {
+      "lr": 0.0003,
+      "weight_decay": 0.001,
+      "batch_size": 32,
+      "epochs_max": 120,
+      "patience": 25,
+      "feature_dim": 128,
+      "val_ratio": 0.2
+    },
+    "preprocess": "hist_eq",
+    "clip_p": 0.0,
+    "clip_hi": null,
+    "train_affine": true,
+    "best_epoch": 53,
+    "best_val_acc": 0.3698630136986301,
+    "feature_dim": 128,
+    "class_weight_used": false,
+    "env": {
+      "python": "3.11.9",
+      "platform": "macOS-12.1-arm64-arm-64bit",
+      "torch": "2.9.1",
+      "numpy": "2.3.5"
+    },
+    "shapes": {
+      "X_train": [
+        365,
+        157,
+        103
+      ],
+      "X_test": [
+        356,
+        157,
+        103
+      ],
+      "features_train": [
+        365,
+        128
+      ],
+      "features_test": [
+        356,
+        128
+      ]
+    }
+  },
+  "note": "PCA 維度與 AdaBoost 超參數以 train features 的 Stratified CV 選出；StandardScaler/PCA 皆為 train-only fit；test 僅最後評估一次。"
+}

@@ -1,0 +1,12 @@
+method,tag,test_acc,macro_f1,artifact_dir
+cnn_svm,baseline,0.308989,0.311001,results/cnn_svm/baseline
+cnn_adaboost,baseline,0.230337,0.153180,results/cnn_adaboost/baseline
+cnn_pca,baseline,0.227528,0.190226,results/cnn_pca/baseline
+cnn_svm,baseline_hist_eq,0.202247,0.180725,results/cnn_svm/baseline_hist_eq
+cnn_adaboost,baseline_hist_eq_affine,0.202247,0.179746,results/cnn_adaboost/baseline_hist_eq_affine
+raw_svm,default,0.196629,0.179503,results/baseline_raw_svm
+cnn_svm,baseline_hist_eq_affine,0.188202,0.187771,results/cnn_svm/baseline_hist_eq_affine
+pca_knn,default,0.171348,0.160044,results/baseline_pca_knn
+cnn_pca,baseline_hist_eq_affine,0.171348,0.147544,results/cnn_pca/baseline_hist_eq_affine
+cnn_pca,baseline_hist_eq,0.157303,0.127352,results/cnn_pca/baseline_hist_eq
+cnn_adaboost,baseline_hist_eq,0.109551,0.037529,results/cnn_adaboost/baseline_hist_eq

@@ -1,0 +1,7 @@
+{
+  "method": "baseline_pca_knn",
+  "train_acc": 0.6164383561643836,
+  "test_acc": 0.17134831460674158,
+  "final_n_components": 32,
+  "final_k": 5
+}

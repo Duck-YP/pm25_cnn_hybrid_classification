@@ -1,0 +1,263 @@
+{
+  "seed": 42,
+  "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+  "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results",
+  "feat_tag": "baseline_hist_eq",
+  "feat_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_feature/baseline_hist_eq",
+  "features": {
+    "train_shape": [
+      365,
+      128
+    ],
+    "test_shape": [
+      356,
+      128
+    ]
+  },
+  "pca_cv": {
+    "candidates": [
+      {
+        "cand_type": "n_components",
+        "cand_value": 16,
+        "mean_acc": 0.9479452054794522,
+        "std_acc": 0.03399910587942699,
+        "fold_accs": [
+          0.8904109589041096,
+          0.9726027397260274,
+          0.9863013698630136,
+          0.9315068493150684,
+          0.958904109589041
+        ],
+        "effective_dims": [
+          16,
+          16,
+          16,
+          16,
+          16
+        ]
+      },
+      {
+        "cand_type": "n_components",
+        "cand_value": 32,
+        "mean_acc": 0.9479452054794522,
+        "std_acc": 0.03399910587942699,
+        "fold_accs": [
+          0.8904109589041096,
+          0.9726027397260274,
+          0.9863013698630136,
+          0.9315068493150684,
+          0.958904109589041
+        ],
+        "effective_dims": [
+          32,
+          32,
+          32,
+          32,
+          32
+        ]
+      },
+      {
+        "cand_type": "n_components",
+        "cand_value": 64,
+        "mean_acc": 0.9479452054794522,
+        "std_acc": 0.03399910587942699,
+        "fold_accs": [
+          0.8904109589041096,
+          0.9726027397260274,
+          0.9863013698630136,
+          0.9315068493150684,
+          0.958904109589041
+        ],
+        "effective_dims": [
+          64,
+          64,
+          64,
+          64,
+          64
+        ]
+      },
+      {
+        "cand_type": "n_components",
+        "cand_value": 128,
+        "mean_acc": 0.9479452054794522,
+        "std_acc": 0.03399910587942699,
+        "fold_accs": [
+          0.8904109589041096,
+          0.9726027397260274,
+          0.9863013698630136,
+          0.9315068493150684,
+          0.958904109589041
+        ],
+        "effective_dims": [
+          128,
+          128,
+          128,
+          128,
+          128
+        ]
+      },
+      {
+        "cand_type": "var_ratio",
+        "cand_value": 0.8,
+        "mean_acc": 0.9041095890410957,
+        "std_acc": 0.04244365310912238,
+        "fold_accs": [
+          0.8356164383561644,
+          0.9452054794520548,
+          0.9452054794520548,
+          0.9178082191780822,
+          0.8767123287671232
+        ],
+        "effective_dims": [
+          3,
+          3,
+          3,
+          3,
+          3
+        ]
+      },
+      {
+        "cand_type": "var_ratio",
+        "cand_value": 0.9,
+        "mean_acc": 0.9123287671232877,
+        "std_acc": 0.048702435163373095,
+        "fold_accs": [
+          0.821917808219178,
+          0.9452054794520548,
+          0.958904109589041,
+          0.9041095890410958,
+          0.9315068493150684
+        ],
+        "effective_dims": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ]
+      },
+      {
+        "cand_type": "var_ratio",
+        "cand_value": 0.95,
+        "mean_acc": 0.936986301369863,
+        "std_acc": 0.041187113365405204,
+        "fold_accs": [
+          0.863013698630137,
+          0.958904109589041,
+          0.9863013698630136,
+          0.9315068493150684,
+          0.9452054794520548
+        ],
+        "effective_dims": [
+          7,
+          6,
+          6,
+          7,
+          7
+        ]
+      },
+      {
+        "cand_type": "var_ratio",
+        "cand_value": 0.98,
+        "mean_acc": 0.9479452054794522,
+        "std_acc": 0.03399910587942699,
+        "fold_accs": [
+          0.8904109589041096,
+          0.9726027397260274,
+          0.9863013698630136,
+          0.9315068493150684,
+          0.958904109589041
+        ],
+        "effective_dims": [
+          10,
+          9,
+          9,
+          10,
+          10
+        ]
+      }
+    ],
+    "best": {
+      "cand_type": "var_ratio",
+      "cand_value": 0.98,
+      "mean_acc": 0.9479452054794522,
+      "std_acc": 0.03399910587942699,
+      "fold_accs": [
+        0.8904109589041096,
+        0.9726027397260274,
+        0.9863013698630136,
+        0.9315068493150684,
+        0.958904109589041
+      ],
+      "effective_dims": [
+        10,
+        9,
+        9,
+        10,
+        10
+      ]
+    }
+  },
+  "final": {
+    "train_acc": 0.9616438356164384,
+    "test_acc": 0.18820224719101122,
+    "pca_dim": 10
+  },
+  "saved": {
+    "scaler": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_pca/baseline_hist_eq/cnn_pca_feat_scaler.joblib",
+    "pca": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_pca/baseline_hist_eq/cnn_pca_pca.joblib",
+    "centroid": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_pca/baseline_hist_eq/cnn_pca_centroid.joblib",
+    "summary": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_pca/baseline_hist_eq/summary.json"
+  },
+  "feature_stage_meta_json": {
+    "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+    "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/cnn_feature/baseline_hist_eq",
+    "tag": "baseline_hist_eq",
+    "seed": 42,
+    "device": "cpu",
+    "cfg": {
+      "lr": 0.0003,
+      "weight_decay": 0.001,
+      "batch_size": 32,
+      "epochs_max": 120,
+      "patience": 25,
+      "feature_dim": 128,
+      "val_ratio": 0.2
+    },
+    "preprocess": "hist_eq",
+    "clip_p": 0.0,
+    "clip_hi": null,
+    "train_affine": false,
+    "best_epoch": 74,
+    "best_val_acc": 0.3698630136986301,
+    "feature_dim": 128,
+    "class_weight_used": false,
+    "env": {
+      "python": "3.11.9",
+      "platform": "macOS-12.1-arm64-arm-64bit",
+      "torch": "2.9.1",
+      "numpy": "2.3.5"
+    },
+    "shapes": {
+      "X_train": [
+        365,
+        157,
+        103
+      ],
+      "X_test": [
+        356,
+        157,
+        103
+      ],
+      "features_train": [
+        365,
+        128
+      ],
+      "features_test": [
+        356,
+        128
+      ]
+    }
+  },
+  "note": "PCA 參數以 train features 的 5-fold CV 選出；test 僅最後評估一次。分類器為 PCA 空間的 Nearest Centroid。"
+}

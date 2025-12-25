@@ -1,0 +1,94 @@
+.
+├── baseline_pca_knn
+│   ├── meta.json
+│   ├── pca_knn_feat_scaler.joblib
+│   ├── pca_knn_knn.joblib
+│   ├── pca_knn_pca.joblib
+│   └── summary.json
+├── baseline_raw_svm
+│   ├── meta.json
+│   ├── raw_svm_feat_scaler.joblib
+│   ├── raw_svm_svm.joblib
+│   └── summary.json
+├── cnn_adaboost
+│   ├── baseline
+│   │   ├── cnn_adaboost.joblib
+│   │   ├── cnn_adaboost_feat_scaler.joblib
+│   │   ├── cnn_adaboost_pca.joblib
+│   │   ├── meta.json
+│   │   └── summary.json
+│   ├── baseline_hist_eq
+│   │   ├── cnn_adaboost.joblib
+│   │   ├── cnn_adaboost_feat_scaler.joblib
+│   │   ├── cnn_adaboost_pca.joblib
+│   │   ├── meta.json
+│   │   └── summary.json
+│   └── baseline_hist_eq_affine
+│       ├── cnn_adaboost.joblib
+│       ├── cnn_adaboost_feat_scaler.joblib
+│       ├── cnn_adaboost_pca.joblib
+│       ├── meta.json
+│       └── summary.json
+├── cnn_feature
+│   ├── baseline
+│   │   ├── cnn_best.pt
+│   │   ├── cnn_refit.pt
+│   │   ├── features_test.npy
+│   │   ├── features_train.npy
+│   │   ├── meta.json
+│   │   └── normalizer.npz
+│   ├── baseline_hist_eq
+│   │   ├── cnn_best.pt
+│   │   ├── cnn_refit.pt
+│   │   ├── features_test.npy
+│   │   ├── features_train.npy
+│   │   ├── meta.json
+│   │   └── normalizer.npz
+│   └── baseline_hist_eq_affine
+│       ├── cnn_best.pt
+│       ├── cnn_refit.pt
+│       ├── features_test.npy
+│       ├── features_train.npy
+│       ├── meta.json
+│       └── normalizer.npz
+├── cnn_pca
+│   ├── baseline
+│   │   ├── cnn_pca_centroid.joblib
+│   │   ├── cnn_pca_feat_scaler.joblib
+│   │   ├── cnn_pca_pca.joblib
+│   │   ├── cv_table.csv
+│   │   ├── meta.json
+│   │   └── summary.json
+│   ├── baseline_hist_eq
+│   │   ├── cnn_pca_centroid.joblib
+│   │   ├── cnn_pca_feat_scaler.joblib
+│   │   ├── cnn_pca_pca.joblib
+│   │   ├── cv_table.csv
+│   │   ├── meta.json
+│   │   └── summary.json
+│   └── baseline_hist_eq_affine
+│       ├── cnn_pca_centroid.joblib
+│       ├── cnn_pca_feat_scaler.joblib
+│       ├── cnn_pca_pca.joblib
+│       ├── cv_table.csv
+│       ├── meta.json
+│       └── summary.json
+├── cnn_svm
+│   ├── baseline
+│   │   ├── cnn_svm_feat_scaler.joblib
+│   │   ├── cnn_svm_svm.joblib
+│   │   ├── meta.json
+│   │   └── summary.json
+│   ├── baseline_hist_eq
+│   │   ├── cnn_svm_feat_scaler.joblib
+│   │   ├── cnn_svm_svm.joblib
+│   │   ├── meta.json
+│   │   └── summary.json
+│   └── baseline_hist_eq_affine
+│       ├── cnn_svm_feat_scaler.joblib
+│       ├── cnn_svm_svm.joblib
+│       ├── meta.json
+│       └── summary.json
+└── project_tree.txt
+
+19 directories, 73 files

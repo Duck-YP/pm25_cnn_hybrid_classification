@@ -1,0 +1,19 @@
+{
+  "feat_tag": "baseline_hist_eq",
+  "train_acc": 0.9616438356164384,
+  "test_acc": 0.18820224719101122,
+  "pca_dim": 10,
+  "best_pca": {
+    "type": "var_ratio",
+    "value": 0.98,
+    "cv_mean_acc": 0.9479452054794522,
+    "cv_std_acc": 0.03399910587942699,
+    "effective_dims": [
+      10,
+      9,
+      9,
+      10,
+      10
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "seed": 42,
+  "data": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/pm25_dataset.npz",
+  "out_dir": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results",
+  "raw_input": {
+    "X_train_shape": [
+      365,
+      157,
+      103
+    ],
+    "X_test_shape": [
+      356,
+      157,
+      103
+    ],
+    "y_train_shape": [
+      365
+    ],
+    "y_test_shape": [
+      356
+    ]
+  },
+  "flatten_feature": {
+    "train_shape": [
+      365,
+      16171
+    ],
+    "test_shape": [
+      356,
+      16171
+    ]
+  },
+  "svm_cv": {
+    "best_params": {
+      "C": 10.0,
+      "gamma": "scale",
+      "class_weight": "balanced"
+    },
+    "cv_mean_acc": 0.5041095890410958,
+    "cv_std_acc": 0.03716345196233025,
+    "n_splits": 5
+  },
+  "final": {
+    "train_acc": 0.9917808219178083,
+    "test_acc": 0.19662921348314608
+  },
+  "saved": {
+    "scaler": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/baseline_raw_svm/raw_svm_feat_scaler.joblib",
+    "svm": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/baseline_raw_svm/raw_svm_svm.joblib",
+    "summary": "/Users/tang_yp/Desktop/數據挖掘與視覺化/7114095003/results/baseline_raw_svm/summary.json"
+  },
+  "note": "SVM 超參數以 raw flatten features 的 5-fold CV 選出；StandardScaler 僅在 train（或 fold train）fit；test 僅最後評估一次。"
+}
