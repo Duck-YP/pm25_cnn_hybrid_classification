@@ -27,7 +27,7 @@ from __future__ import annotations
         * Error analysis（混淆矩陣、最容易混淆的月份）
         * 結論（誰最好、為什麼；以及 ablation 觀察）
 
-設計原則（避免 0 分）：
+設計原則：
   - 此檔案 *不會* 進行任何訓練。
   - 此檔案 *不會* 對輸入資料做任何 fit（例如 scaler/PCA 的 fit）。
   - 所有 scaler/PCA/model 都必須先由你既有的訓練腳本產生並存到 ./results/...。

@@ -1,0 +1,95 @@
+PM2.5 月份分類作業｜測試用超簡易操作說明（Teacher Guide）
+====================================================
+
+【你要做什麼】
+1) 讓程式在 pm25_dataset.npz 上「整理報告」：產生 results_table / ablation / confusion matrix 等檔案
+2)（若有 extra_test）用同一支程式做「純推論」輸出預測月份
+
+----------------------------------------------------
+A. 環境準備（第一次做）
+----------------------------------------------------
+0) 進到專案根目錄（看到 infer_extra_test.py 那層）
+   例如：
+   cd <project_root>
+
+1) 建立並啟用 venv（擇一）
+   macOS/Linux：
+     python -m venv venv
+     source venv/bin/activate
+
+   Windows PowerShell：
+     python -m venv venv
+     .\venv\Scripts\Activate.ps1
+
+2) 安裝套件
+   pip install -r requirements.txt
+
+※ 若已經有可用環境，可略過 venv 步驟。
+
+----------------------------------------------------
+B. 模式 1：整理 pm25_dataset 報告（有 y_test，會算 accuracy）
+----------------------------------------------------
+【目的】
+- 讀取已訓練的模型 artifacts（results/ 裡的 .joblib/.pt 等）
+- 在 pm25_dataset.npz 的 test 上評估並輸出「可看報告」資料夾
+
+【執行】
+python infer_extra_test.py -data pm25_dataset.npz --out_dir ./results
+
+【成功後請到這裡看報告】
+results/report/pm25_dataset/
+
+【你會看到的重點檔案】
+1) REPORT.md
+   - 一段整理好的文字版報告摘要（可直接貼投影片/報告）
+
+2) results_table.csv
+   - 全部方法的測試結果總表（包含各 paper 方法 + baselines）
+
+3) ablation_hist_eq_affine.csv
+   - ablation：baseline vs hist_eq vs hist_eq_affine 的比較
+
+4) confusion_best.png
+   - 最佳方法的 confusion matrix 圖（最直觀）
+
+5) error_top_confusions.csv
+   - 最容易混淆的月份 pair（錯誤分析用）
+
+6) conclusion.json
+   - 程式自動挑出 best 方法與 top3 的摘要資訊（機器可讀）
+
+----------------------------------------------------
+C. 模式 2：額外測試資料推論（extra_test，純推論不訓練）
+----------------------------------------------------
+【目的】
+- 對 extra_test 做「純推論」（不訓練、不 fit、不調參）
+- 輸出可交付的月份預測（CSV）
+
+【執行】
+python infer_extra_test.py -data extra_test.npz --out_dir ./results
+
+【輸出在哪】
+results/infer_extra/
+
+【每個方法都會輸出】
+- pred_month1_12.csv   （兩欄：id,month；最適合直接收/看）
+- pred_month1_12.npy
+- pred_label0_11.npy
+- meta.json
+
+※ Baselines 的路徑會是：
+   results/infer_extra/raw_svm/default/
+   results/infer_extra/pca_knn/default/
+
+※ CNN 方法會依 tag 分資料夾：
+   results/infer_extra/cnn_svm/baseline/
+   results/infer_extra/cnn_svm/baseline_hist_eq/
+   results/infer_extra/cnn_svm/baseline_hist_eq_affine/
+   （cnn_pca、cnn_adaboost 同理）
+
+【注意（避免格式錯）】
+- extra_test 的 X 必須是 3D 網格資料 (N,H,W)，不能是 flatten 的 (N,D)
+
+
+====================================================
+如果 B/C 兩種模式皆可成功執行，且能在對應資料夾找到輸出檔案，即代表程式可重跑且報告位置正確。

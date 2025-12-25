@@ -1,4 +1,7 @@
 .
+├── .DS_Store
+├── .gitignore
+├── README.md
 ├── infer_extra_test.py
 ├── inspect_pm25_data.py
 ├── pm25_dataset.npz
@@ -6,6 +9,7 @@
 ├── report.txt
 ├── requirements.txt
 ├── results
+│   ├── .DS_Store
 │   ├── baseline_pca_knn
 │   │   ├── meta.json
 │   │   ├── pca_knn_feat_scaler.joblib
@@ -18,6 +22,7 @@
 │   │   ├── raw_svm_svm.joblib
 │   │   └── summary.json
 │   ├── cnn_adaboost
+│   │   ├── .DS_Store
 │   │   ├── baseline
 │   │   │   ├── cnn_adaboost.joblib
 │   │   │   ├── cnn_adaboost_feat_scaler.joblib
@@ -37,6 +42,7 @@
 │   │       ├── meta.json
 │   │       └── summary.json
 │   ├── cnn_feature
+│   │   ├── .DS_Store
 │   │   ├── baseline
 │   │   │   ├── cnn_best.pt
 │   │   │   ├── cnn_refit.pt
@@ -59,6 +65,7 @@
 │   │       ├── meta.json
 │   │       └── normalizer.npz
 │   ├── cnn_pca
+│   │   ├── .DS_Store
 │   │   ├── baseline
 │   │   │   ├── cnn_pca_centroid.joblib
 │   │   │   ├── cnn_pca_feat_scaler.joblib
@@ -81,6 +88,7 @@
 │   │       ├── meta.json
 │   │       └── summary.json
 │   ├── cnn_svm
+│   │   ├── .DS_Store
 │   │   ├── baseline
 │   │   │   ├── cnn_svm_feat_scaler.joblib
 │   │   │   ├── cnn_svm_svm.joblib
@@ -96,9 +104,18 @@
 │   │       ├── cnn_svm_svm.joblib
 │   │       ├── meta.json
 │   │       └── summary.json
-│   └── project_tree.txt
+│   ├── project_tree.txt
+│   └── report
+│       ├── .DS_Store
+│       └── pm25_dataset
+│           ├── REPORT.md
+│           ├── ablation_hist_eq_affine.csv
+│           ├── conclusion.json
+│           ├── confusion_best.csv
+│           ├── confusion_best.png
+│           ├── error_top_confusions.csv
+│           └── results_table.csv
 ├── run_baseline_pca_knn.py
-├── run_baseline_pca_rf.py
 ├── run_baseline_raw_svm.py
 ├── run_paper_cnn_adaboost.py
 ├── run_paper_cnn_pca.py
@@ -106,4 +123,4 @@
 ├── train_cnn_feature.py
 └── 資料集使用說明.txt
 
-20 directories, 87 files
+22 directories, 102 files
